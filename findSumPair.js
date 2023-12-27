@@ -5,7 +5,7 @@
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 15, 11, 13]
 let dup = [];
-//sum =15;
+sum =12;
 let pariArr = [];
 
 for (let i = 0; i < arr.length; i++) {
@@ -13,7 +13,7 @@ for (let i = 0; i < arr.length; i++) {
         var num1 = arr[i];
         var num2 = arr[j];
         var temp = String(num1) + String(num2);
-        if (arr[i] + arr[j] == 15 && !dup.includes(arr[i]) && !dup.includes(arr[i])){
+        if (arr[i] + arr[j] == sum && !dup.includes(arr[i]) && !dup.includes(arr[i])){
             dup.push(arr[i]);
             dup.push(arr[j]);
             pariArr.push([arr[i], arr[j]]);
