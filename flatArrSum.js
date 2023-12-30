@@ -22,3 +22,7 @@ let str = "";
 //sum of all element in the flat array
 flatArr.map(item => {sum+=item; str+=`${item}+`;})
 console.log(str,sum);
+
+flatArr.reduce((flat)=>{
+    
+});
