@@ -1,6 +1,7 @@
 //find the second largest number from the given array
 
-let arr = [1,2,3,25,4,5,15];
+let arr = [20,10,50,30,70,100];
+console.log("Array : ",arr);
 let largest = (function (arr=[]){
     let large = arr[0];
     arr.map(function (ele){
@@ -38,6 +39,3 @@ function largestRecursion(arr=[],count,lg){
     largestRecursion(arr,count,lg);
 }
 largestRecursion(arr,arr.length,arr[0]);
-
-
-//find the kth largest element in the given array
