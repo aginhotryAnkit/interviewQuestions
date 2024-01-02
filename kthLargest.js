@@ -1,4 +1,9 @@
 let arr = [1,6,8,4,9,3];
+let copy = [];
+arr.map(function (ele){
+   copy.push(ele);
+});
+console.log("Sort Array: ",copy.sort());
 //find the kth largest element in the given array
 function kthLargestEle(arr=[], findSeq){
     let kthLargest= arr[0];
@@ -21,7 +26,7 @@ function kthLargestEle(arr=[], findSeq){
             //     console.log(arr[i],arr[j]);
             // }
         }
-        // console.log("\ninner loop end");
+        // console.log("\ninner loop end");SS
 
         currentLargest = kthLargest;
         findLargest.push(kthLargest);
@@ -34,4 +39,4 @@ function kthLargestEle(arr=[], findSeq){
     // console.log(findLargest);
 }
 
-kthLargestEle(arr,2);
+kthLargestEle(arr,10);
