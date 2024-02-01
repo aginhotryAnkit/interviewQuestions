@@ -27,4 +27,4 @@ function spliceArr(arr, start, end){
 
 // console.log(curSize);
 console.log("Original Array : ", arr);
-console.log("Cut Size : ", curSize);
+console.log("Cut Size : ", result);
