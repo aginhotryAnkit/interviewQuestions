@@ -8,38 +8,61 @@
 // Explanation: In every step a jump is needed so the count of jumps is 10.
 
 
+//Minimum number of jumps to reach end (Jump Game)
 
-let arr = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9];
-let  jumpCount = 0;
-let value = arr[0];
+// Input: arr = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
+// Output: 3 (1-> 3 -> 9 -> 9)
 
-arr.reduce((acc,ele,index,arr)=> {
+//logic
+// function -> (arr, jumpCount)
+// jumpCount = 1; i = 0, ele = 1, arr.length = 10;
+// again call function -> ()
 
-    if(acc<arr.length-1){
-        let result = findMaxIndex(acc,value,arr);
-        acc = result['index'];
-        value = result['max'];
-        // console.log(acc);
-        // jumpCount+=1;
-        console.log(result);
+let arr = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]; //10-1 = 9
+var jumpCount = 0;
+let jump = 0;
+var hello = 0;
+
+//find the next Jump
+function getNextJump(arr, startIndex) {
+    jumpCount += 1;
+    let l = arr.length - startIndex;
+    nextIndex = arr[startIndex];
+    if (nextIndex >= l) {
+      return jumpCount;
+    } else {
+      
+      if (startIndex + 1 != nextIndex) {
+        nextIndex += 1;
+      }
+      startIndex = findMaxIndex(startIndex, nextIndex);
+      getNextJump(arr, startIndex);
     }
+  }
 
-    // console.log((acc<arr.length-1), acc, arr.length-1);
-
-    return acc;
-},0);
-
-function findMaxIndex(start, end, arr){
-    console.log(start,end);
-    let idx = 0;
-    let max = arr[start];
-    for(let i = start; i<=end;i++){
-        if(arr[i]>max){
-            idx = i;
-            max = arr[i];
-        }
-    }
-    return {"max":max, "index":idx};
+if (arr.length === 0) {
+  console.log("There is no jump possible");
+} else if (arr.length == 1) {
+  console.log("There only 1 jump possible");
+} else if (arr.length > 1) {
+   getNextJump(arr, jumpCount, jump);
+  console.log("Total Number of Jumps :", jumpCount);
 }
 
-console.log("Jumps "+jumpCount);
+//find the largest elemet from given range in array
+function findMaxIndex(start, end) {
+  // if (start+1 == end) {
+  //   ++end;
+  // }
+  // console.log(start, end);
+  let maxEle = arr[start];
+  let maxIndex = start;
+  for (let i = start + 1; i <= end; i++) {
+    if (maxEle < arr[i]) {
+      maxIndex = i;
+      maxEle = arr[i];
+    }
+  }
+  return maxIndex;
+}
+// console.log(findMaxIndex(0,arr.length));
