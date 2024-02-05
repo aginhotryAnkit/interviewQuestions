@@ -15,12 +15,14 @@ function createWaveLength(arr=[]){
     let newArr = [];
     let result = [];
     if(arr.length%2==0){
-        let newArr = arr.splice(1,arr.length-2);
+        newArr = arr.splice(1,arr.length-2);
     }else{
-        let newArr = arr.splice(1,arr.length-1);
+        newArr = arr.splice(1,arr.length-1);
     }
+
     let even = newArr.filter((ele,index)=>(index%2==0));
     let odd = newArr.filter((ele,index)=>(index%2!=0));
+
     let shiftArr = [];
     odd.map((ele,index)=>{
         shiftArr.push(ele);
