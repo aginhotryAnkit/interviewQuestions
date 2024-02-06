@@ -18,4 +18,12 @@ function maxMinArr(numberArr=[]){
     console.log(min);
 }
 
-maxMinArr(numberArr);
+//optimized code 
+let maximum = numberArr.reduce((acc,ele)=>(ele>acc)?acc=ele:acc=acc,numberArr[0]);
+let minimum = numberArr.reduce((acc,ele)=>(ele<acc)?acc=ele:acc=acc,numberArr[0]);
+
+console.log("Maximum:", maximum);
+console.log("Maximum:", minimum);
+
+
+// maxMinArr(numberArr);
